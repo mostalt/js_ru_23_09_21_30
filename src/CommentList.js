@@ -3,6 +3,7 @@ import Comment from './Comment'
 import toggleOpen from './decorators/toggleOpen'
 
 function CommentList(props) {
+
     const { comments, isOpen, toggleOpen } = props
     if (!comments || !comments.length) return <p>No comments yet</p>
 
@@ -16,6 +17,10 @@ function CommentList(props) {
             {body}
         </div>
     )
+}
+
+CommentList.PropTypes = {
+    comments: PropTypes.array
 }
 
 export default toggleOpen(CommentList)
